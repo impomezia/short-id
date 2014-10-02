@@ -41,3 +41,17 @@ it('generate variable size id', function() {
     }
   }
 });
+
+
+it('support legacy ids', function() {
+  expect(shortid.isValid('32UdW3f')).to.be.true;
+});
+
+
+it('validate ids', function() {
+  expect(shortid.isValid('B6t1a5B')).to.be.true;
+  expect(shortid.isValid('f2V')).to.be.true;
+  expect(shortid.isValid('aeM6xB1GoSfRWyNCZtu7eo2M')).to.be.true;
+  expect(shortid.isValid('B$t1a5B')).to.be.false;
+  expect(shortid.isValid('B6t1a5$')).to.be.false;
+});
